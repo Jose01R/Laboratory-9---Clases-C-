@@ -42,46 +42,39 @@ void semaphore1::V() {
 }
 
 void semaphore1::childProcess(char c) {
-    srand(getpid());
-    for (int i = 0; i < IT_NUM; ++i) {
-        P(); // entramos a region critica
-        
-        for (int j = 0; j < IT_NUM; ++j)
-            std::cout << c;
-        std::cout.flush();
-        
-        V(); //salimos de region critica
-        usleep(200000 + rand() % 300000); 
-    }
-    _exit(0); //terminar el hijo
+    P(); //entrar a region critica
+    for (int j = 0; j < IT_NUM; ++j)
+        std::cout << c;
+    std::cout.flush();
+    V(); //sale de region critica
+    _exit(0); //termina el hijo
 }
+
 
 //iniciar procesos 
 void semaphore1::start() {
     for (int i = 0; i < n; ++i) {
         pid_t pid = fork();
         if (pid == 0) {
-            childProcess(symbols[i]);
+            childProcess(symbols[i]); //cada hijo imprime un bloque
         } else if (pid < 0) {
-            perror("Error al crear proceso hijo");
+            perror("Error");
         }
     }
 
-    //padre imprime su propio char
-    char parentChar = '@';
-    for (int i = 0; i < IT_NUM; ++i) { //for para determinar cuantas veces entra un proceso a la regon critica
-        P();
-        for (int j = 0; j < IT_NUM; ++j) //for para imprimir secuencia
-            std::cout << parentChar;
-        std::cout.flush();
-        V();
-        usleep(300000 + rand() % 200000);
-        
-        //NOTA: SI SOLO SE USA UN FOR (INTERNO) - IMPRIME SECUENCIA DESORDENADA
-    }
+    // Proceso padre imprime su bloque
+    
+    P(); //entra en region critica
+    
+    for (int j = 0; j < IT_NUM; ++j)
+        std::cout << '@';
+    std::cout.flush();
+    
+    V(); //sale region critica
 
-    //esepramos a que terminen los hijos
+    // Esperar a que terminen los hijos
     for (int i = 0; i < n; ++i)
         wait(NULL);
 
 }
+
