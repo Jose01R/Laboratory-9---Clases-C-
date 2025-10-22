@@ -8,6 +8,8 @@
       <itemPath>mutex2.h</itemPath>
       <itemPath>mutex4.h</itemPath>
       <itemPath>mutex5.h</itemPath>
+      <itemPath>semaphore1.h</itemPath>
+      <itemPath>semaphore2.h</itemPath>
       <itemPath>semaphore5.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -22,6 +24,8 @@
       <itemPath>mutex2.cpp</itemPath>
       <itemPath>mutex4.cpp</itemPath>
       <itemPath>mutex5.cpp</itemPath>
+      <itemPath>semaphore1.cpp</itemPath>
+      <itemPath>semaphore2.cpp</itemPath>
       <itemPath>semaphore5.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -63,6 +67,14 @@
       <item path="mutex5.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="mutex5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="semaphore1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="semaphore1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="semaphore2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="semaphore2.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="semaphore5.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -106,6 +118,14 @@
       <item path="mutex5.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="mutex5.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="semaphore1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="semaphore1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="semaphore2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="semaphore2.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="semaphore5.cpp" ex="false" tool="1" flavor2="0">
       </item>

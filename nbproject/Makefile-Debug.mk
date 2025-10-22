@@ -40,6 +40,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/mutex2.o \
 	${OBJECTDIR}/mutex4.o \
 	${OBJECTDIR}/mutex5.o \
+	${OBJECTDIR}/semaphore1.o \
+	${OBJECTDIR}/semaphore2.o \
 	${OBJECTDIR}/semaphore5.o
 
 
@@ -91,6 +93,16 @@ ${OBJECTDIR}/mutex5.o: mutex5.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mutex5.o mutex5.cpp
+
+${OBJECTDIR}/semaphore1.o: semaphore1.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/semaphore1.o semaphore1.cpp
+
+${OBJECTDIR}/semaphore2.o: semaphore2.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/semaphore2.o semaphore2.cpp
 
 ${OBJECTDIR}/semaphore5.o: semaphore5.cpp
 	${MKDIR} -p ${OBJECTDIR}
