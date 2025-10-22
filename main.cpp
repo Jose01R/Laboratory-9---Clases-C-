@@ -18,6 +18,7 @@
 #include "semaphore5.h"
 #include "semaphore2.h"
 #include "semaphore1.h"
+#include "semaphore4.h"
 
 using namespace std;
 
@@ -122,11 +123,17 @@ int main(int argc, char** argv) {
 //    s->start();
     
     //SEMAPHORE 1
-    char symbols[] = {'+', '-', '#', '%', '&', '!', '*', '<', '>', '$'};
-    int n = 4; // número de procesos hijos a crear
-    semaphore1 s(n, symbols);
-
-    s.start(); 
+//    char symbols[] = {'+', '-', '#', '%', '&', '!', '*', '<', '>', '$'};
+//    int n = 4; // número de procesos hijos a crear
+//    semaphore1 s(n, symbols);
+//
+//    s.start(); 
+    
+    //SEMAPHORE 4
+    int a[] = {-5, 10, -10, 15, 25, -8, -30, 5, 7, -2};
+    semaphore4 *s = new semaphore4(10, a);
+    s->start();
+    //delete s;
     
     return 0;
 }
