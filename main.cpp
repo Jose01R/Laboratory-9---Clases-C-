@@ -12,6 +12,7 @@
 
 #include <cstdlib>
 #include "mutex1.h"
+#include "mutex2.h"
 #include "mutex4.h"
 #include "mutex5.h"
 #include "semaphore5.h"
@@ -44,6 +45,44 @@ int main(int argc, char** argv) {
 //    }
 //    
     
+    //MUTEX2
+    srand(time(NULL));
+    mutex2* m[4];
+    std::mutex mutex;
+
+    int a[100];
+    char b[32];
+    int c[100];
+    char d[32];
+
+    for (int j = 0; j < 100; j++)
+        a[j] = j + 1;
+
+    for (int j = 0; j < 26; j++)
+        b[j] = 'a' + j;
+    b[26] = '\0';
+
+    for (int j = 0; j < 100; j++)
+        c[j] = 100 - j;
+
+    for (int j = 0; j < 26; j++)
+        d[j] = 'z' - j;
+    d[26] = '\0';
+
+    m[0] = new mutex2(&mutex, a, 100, 1, "INT");
+    m[1] = new mutex2(&mutex, b, 26, 2, "CHAR");
+    m[2] = new mutex2(&mutex, c, 100, 3, "INT");
+    m[3] = new mutex2(&mutex, d, 26, 4, "CHAR");
+
+    for (int i = 0; i < 4; i++)
+        m[i]->run();
+
+    for (int i = 0; i < 4; i++)
+        m[i]->join();
+
+   
+    
+    
     //MUTEX4
 //    mutex4 *m[10];
 //    std::mutex mutex;
@@ -72,9 +111,9 @@ int main(int argc, char** argv) {
 //    m->join();
     
     //SEMAPHORE 5 - FILOSOFOS
-    semaphore5 *s = new semaphore5();
-    s->start();
-    s->join();
+//    semaphore5 *s = new semaphore5();
+//    s->start();
+//    s->join();
     
     
     return 0;

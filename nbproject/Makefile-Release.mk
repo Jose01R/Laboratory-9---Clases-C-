@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/mutex1.o \
+	${OBJECTDIR}/mutex2.o \
 	${OBJECTDIR}/mutex4.o \
 	${OBJECTDIR}/mutex5.o \
 	${OBJECTDIR}/semaphore5.o
@@ -75,6 +76,11 @@ ${OBJECTDIR}/mutex1.o: mutex1.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mutex1.o mutex1.cpp
+
+${OBJECTDIR}/mutex2.o: mutex2.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mutex2.o mutex2.cpp
 
 ${OBJECTDIR}/mutex4.o: mutex4.cpp
 	${MKDIR} -p ${OBJECTDIR}
