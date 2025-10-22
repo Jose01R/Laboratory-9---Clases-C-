@@ -36,12 +36,16 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/messageCenter.o \
 	${OBJECTDIR}/mutex1.o \
 	${OBJECTDIR}/mutex2.o \
+	${OBJECTDIR}/mutex3.o \
 	${OBJECTDIR}/mutex4.o \
 	${OBJECTDIR}/mutex5.o \
+	${OBJECTDIR}/mutex6.o \
 	${OBJECTDIR}/semaphore1.o \
 	${OBJECTDIR}/semaphore2.o \
+	${OBJECTDIR}/semaphore3.o \
 	${OBJECTDIR}/semaphore4.o \
 	${OBJECTDIR}/semaphore5.o
 
@@ -75,6 +79,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
+${OBJECTDIR}/messageCenter.o: messageCenter.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/messageCenter.o messageCenter.cpp
+
 ${OBJECTDIR}/mutex1.o: mutex1.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -84,6 +93,11 @@ ${OBJECTDIR}/mutex2.o: mutex2.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mutex2.o mutex2.cpp
+
+${OBJECTDIR}/mutex3.o: mutex3.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mutex3.o mutex3.cpp
 
 ${OBJECTDIR}/mutex4.o: mutex4.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -95,6 +109,11 @@ ${OBJECTDIR}/mutex5.o: mutex5.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mutex5.o mutex5.cpp
 
+${OBJECTDIR}/mutex6.o: mutex6.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mutex6.o mutex6.cpp
+
 ${OBJECTDIR}/semaphore1.o: semaphore1.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -104,6 +123,11 @@ ${OBJECTDIR}/semaphore2.o: semaphore2.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/semaphore2.o semaphore2.cpp
+
+${OBJECTDIR}/semaphore3.o: semaphore3.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/semaphore3.o semaphore3.cpp
 
 ${OBJECTDIR}/semaphore4.o: semaphore4.cpp
 	${MKDIR} -p ${OBJECTDIR}

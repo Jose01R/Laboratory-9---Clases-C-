@@ -19,6 +19,10 @@
 #include "semaphore2.h"
 #include "semaphore1.h"
 #include "semaphore4.h"
+#include "mutex3.h"
+#include "semaphore3.h"
+#include "messageCenter.h"
+#include "mutex6.h"
 
 using namespace std;
 
@@ -46,7 +50,7 @@ int main(int argc, char** argv) {
 //    for(int i = 0; i < 5; i++){
 //        m[i]->join();
 //    }
-//    
+    
     
     //MUTEX2
 //    srand(time(NULL));
@@ -83,8 +87,27 @@ int main(int argc, char** argv) {
 //    for (int i = 0; i < 4; i++)
 //        m[i]->join();
 
-   
-    
+    //Mutex 3
+//     mutex3 *m[10];
+//     std::mutex mutex;
+//     #include <string>
+//
+//    std::string a[] = {
+//    "dup2", "pipe", "file descriptor", "write", "pthread create",
+//    "fork", "read", "pthread join", "wait", "pthread kill"
+//    };
+//    
+//    //creamos las instacias de la clase y se asignan los caracteres 
+//     for(int i=0;i<10;i++){
+//         m[i] = new mutex3(&mutex, a[i]);
+//         
+//         //ahora lanzamos el hilo 
+//         m[i]->run();
+//     }
+//     //se hace los join aparte para que los hilos sean aleatorios 
+//     for(int i=0;i<10;i++){
+//         m[i]->join();
+//     }
     
     //MUTEX4
 //    mutex4 *m[10];
@@ -113,14 +136,15 @@ int main(int argc, char** argv) {
 //    m->run();
 //    m->join();
     
-    //SEMAPHORE 5 - FILOSOFOS
-//    semaphore5 *s = new semaphore5();
-//    s->start();
-//    s->join();
     
-    //SEMAPHORE 2
-//    semaphore2 *s = new semaphore2();
-//    s->start();
+    //Mutex6 - PROD Y CONS VAR COND
+      mutex6 mc(4,2);
+      mc.run();
+      mc.join();
+    
+    
+    
+    
     
     //SEMAPHORE 1
 //    char symbols[] = {'+', '-', '#', '%', '&', '!', '*', '<', '>', '$'};
@@ -129,11 +153,30 @@ int main(int argc, char** argv) {
 //
 //    s.start(); 
     
+    //SEMAPHORE 2
+//    semaphore2 *s = new semaphore2();
+//    s->start();
+    
+    //Semaphore3
+//    std::string a[]={"dup2", "pipe", "file descriptor", "write", "pthread create",
+//    "fork", "read", "pthread join", "wait", "pthread kill"};
+//    semaphore3 *s=new semaphore3(5,a);
+//    s->start();
+    
+    
     //SEMAPHORE 4
-    int a[] = {-5, 10, -10, 15, 25, -8, -30, 5, 7, -2};
-    semaphore4 *s = new semaphore4(10, a);
-    s->start();
-    //delete s;
+//    int a[] = {-5, 10, -10, 15, 25, -8, -30, 5, 7, -2};
+//    semaphore4 *s = new semaphore4(10, a);
+//    s->start();
+    
+    //SEMAPHORE 5 - FILOSOFOS
+//    semaphore5 *s = new semaphore5();
+//    s->start();
+//    s->join();
+    
+    //SEMAPHORE 6 - MessageCenter
+//    MessageCenter mc;
+//    mc.start();
     
     return 0;
 }
